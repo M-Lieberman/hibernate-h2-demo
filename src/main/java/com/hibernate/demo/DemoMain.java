@@ -9,14 +9,9 @@ import java.util.List;
 public class DemoMain {
 
     public static void main(String... args) {
-        SessionFactory sessionFactory = new Configuration().configure()
-                .buildSessionFactory();
-//        try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
-        try {
+        try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
             persist(sessionFactory);
             load(sessionFactory);
-        } finally {
-            sessionFactory.close();
         }
     }
 
