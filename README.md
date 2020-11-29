@@ -1,1 +1,1 @@
-# hibernate-h2-demo
+## Demo of Hibernate and H2 
